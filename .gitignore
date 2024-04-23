@@ -2,10 +2,6 @@ data/*
 !data/.gitkeep
 !data/init.sql
 !data/test.xml
-!data/pgdata
-
-data/pgdata/*
-!data/pgdata/.gitkeep
 
 .venv
 .env
