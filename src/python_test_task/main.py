@@ -14,8 +14,17 @@ from lxml import etree
 from dotenv import load_dotenv
 
 
+"""Символ—разделитель для частей категории товара."""
+CATEGORY_PATH_SEP = "/"
+
+
 @dataclasses.dataclass(frozen=True)
 class Category:
+    """Класс категории товара на маркетплейсе.
+
+    path — полная категория.
+    """
+
     id: str
     parent_id: str
     name: str
@@ -24,6 +33,8 @@ class Category:
 
 @dataclasses.dataclass(frozen=True)
 class Offer:
+    """Класс товарной позиции на маркетплейсе."""
+
     uuid: uuid.UUID
     marketplace_id: int = None
     product_id: int = None
@@ -50,11 +61,28 @@ class Offer:
     barcode: int = None
 
     def __iter__(self):
+        """Используем __iter__ для создания кортежа: tuple(Offer(...)).
+        Потом этот кортеж можно положить в db.execute() для подставновки значений в SQL."""
         for value in self.__dict__.values():
             yield value
 
 
 def get_raw_categories(xml_file_path: str) -> dict[str, dict]:
+    """
+    Парсинг категорий из XML файла.
+
+        Parameters:
+            xml_file_path (str): Полный путь до XML файла.
+
+        Returns:
+            categories (dict[str, dict]): Словарь, где ключ — это ID категории,
+            а значение — категория в формате словаря с ключами — значениями:
+                id — ID категории (str),
+                parent_id — ID родительской категории (str),
+                name — название категории (str),
+                path — кортеж с названием категории, заготовка под полный путь категории (tuple[str, ...]).
+
+    """
     categories = dict()
     try:
         for action, elem in etree.iterparse(
@@ -75,18 +103,40 @@ def get_raw_categories(xml_file_path: str) -> dict[str, dict]:
 
 
 def build_category_tree(categories: dict[str, dict]) -> dict[str, Category]:
+    """
+    Построение полных категорий path и создание экземпляров Category.
+
+        Parameters:
+            categories (dict[str, dict]): Словарь категорий, который получаем из get_raw_categories.
+
+        Returns:
+            category_tree (dict[str, Category]): Словарь, где ключ — это ID категории,
+                а значение — категория в виде экземпляра класса Category.
+    """
     result = {}
     for id, x in categories.items():
         y = x
         while parent := categories.get(y["parent_id"]):
             x["path"] = (parent["name"],) + x["path"]
             y = parent
-        result[id] = Category(id, x["parent_id"], x["name"], "/".join(x["path"]))
+        result[id] = Category(
+            id, x["parent_id"], x["name"], CATEGORY_PATH_SEP.join(x["path"])
+        )
     return result
 
 
 @contextmanager
 def get_db():
+    """
+    Создание подключения к базе и курсора.
+
+        Returns:
+            cursors: Курсор psycopg2 для взаимодействия с БД.
+
+        Пример использования:
+            with get_db() as cur:
+                cur.execute(...)
+    """
     psycopg2.extras.register_uuid()
     con = psycopg2.connect(
         dbname=os.getenv("POSTGRES_DB"),
@@ -108,6 +158,12 @@ def get_db():
 
 
 def insert_offer(offer: Offer):
+    """
+    Создание записи в таблице offer в БД.
+
+        Parameters:
+            offer (Offer): Экземпляр класса Offer.
+    """
     sql = """
         INSERT INTO sku (
             uuid, marketplace_id, product_id, title, description,
@@ -130,19 +186,43 @@ def insert_offer(offer: Offer):
 def get_offer_n_level_category(
     offer_category_id: str, level: int, category_tree: dict[str, Category]
 ) -> str:
+    """
+    Получение N части категории товара.
+
+        Parameters:
+            offer_category_id (Offer): Экземпляр класса Offer.
+            level (int): N часть категории товара. Число >=1 или =-1.
+            category_tree: Словарь из build_category_tree.
+
+        Returns:
+            path (str): N часть категории товара
+                Если level=-1, то вернётся вся категория за исключением 1, 2 и 3 части категории.
+    """
     offer_category = category_tree.get(str(offer_category_id))
-    path = offer_category.path.split("/")
+    path = offer_category.path.split(CATEGORY_PATH_SEP)
 
     if level == -1:
         path.pop(0)
         path.pop(0)
         path.pop(0)
-        return "/".join(path)
+        return CATEGORY_PATH_SEP.join(path)
 
     return path[level - 1]
 
 
 # {'name', 'oldprice', 'description', 'param', 'group_id', 'url', 'categoryId', 'vendor', 'currencyId', 'modified_time', 'picture', 'price', 'barcode'}
+"""Таблица маппинга тегов из XML на поля в БД.
+    
+    Встречающиеся варианты тегов в пример XML из задания: 
+        {'name', 'oldprice', 'description', 'param', 'group_id', 'url', 
+        'categoryId', 'vendor', 'currencyId', 'modified_time', 'picture', 
+        'price', 'barcode'}
+    
+    Получил прохождением по всем тегам в файле и добавлении тегов в set().
+    
+    vendor похож на brand. Однако в схеме БД по заданию brand — это integer.
+    Посчитал, что это — ошибка, и исправил brand integer на brand text в схеме.
+"""
 mapping_table = {
     "name": "title",
     "description": "description",
@@ -159,6 +239,18 @@ mapping_table = {
 
 
 def process_offer(offer_tag: etree.Element, category_tree: dict[str, Category]):
+    """
+    Основная функция обработки товарной позиции из XML.
+    Раскидывает аттрибуты и текст тега по словарю offer.
+    Добавляет теги <param> в словарь params,
+    который потом добавляется в offer в виде JSON.
+
+    Создаёт экземпляр Offer из словаря offer и создаёт запись в БД.
+
+        Parameters:
+            offer_tag (etree.Element): Очередной тег <offer> из XML.
+            category_tree: Словарь из build_category_tree.
+    """
     offer = {"uuid": uuid.uuid4(), "product_id": offer_tag.attrib.get("id")}
     params = {}
     for elem in offer_tag:
