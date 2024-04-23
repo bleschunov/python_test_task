@@ -1,0 +1,12 @@
+data/*
+!data/.gitkeep
+!data/pgdata
+data/pgdata/*
+!data/pgdata/.gitkeep
+
+.venv
+.env
+.pdm-python
+.idea
+.DS_Store
+__pycache__

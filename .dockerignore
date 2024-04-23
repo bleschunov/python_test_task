@@ -1,0 +1,6 @@
+data
+.idea
+.venv
+.pdm-python
+.DS_Store
+__pycache__

@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres
+    container_name: "postgres"
+    env_file:
+      - .env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready"]
+      interval: 2s
+      timeout: 2s
+      retries: 10
+    ports:
+      - ${POSTGRES_PORT}:5432
+    volumes:
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data/pgdata:/var/lib/postgresql/data
+  service:
+    image: python_test_task
+    container_name: python_test_task
+    env_file:
+      - .env
+    build:
+        context: .
+        dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
