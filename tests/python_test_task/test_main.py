@@ -12,7 +12,7 @@ class TestMain(unittest.TestCase):
         answer = {
             Category("1", "", "Детям", ()),
             Category("2", "1", "Девочкам", ("1",)),
-            Category("3", "2", "Куклы", ("1", "2"))
+            Category("3", "2", "Куклы", ("1", "2")),
         }
 
         categories = build_category_tree(categories)

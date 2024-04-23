@@ -61,7 +61,7 @@ def get_raw_categories(xml_file_path: str) -> dict[str, dict]:
             categories[elem.attrib.get("id")] = {
                 "parent_id": elem.attrib.get("parentId", ""),
                 "name": elem.text,
-                "path": (elem.text,)
+                "path": (elem.text,),
             }
     except etree.XMLSyntaxError:
         pass
@@ -87,7 +87,7 @@ def get_db():
         user=os.getenv("POSTGRES_USER"),
         password=os.getenv("POSTGRES_PASSWORD"),
         host=os.getenv("POSTGRES_HOST"),
-        port=os.getenv("POSTGRES_PORT")
+        port=os.getenv("POSTGRES_PORT"),
     )
     cur = con.cursor()
     try:
@@ -121,7 +121,9 @@ def insert_offer(offer: Offer):
         cur.execute(sql, tuple(offer))
 
 
-def get_offer_n_level_category(offer_category_id: str, level: int, category_tree: dict[str, Category]) -> str:
+def get_offer_n_level_category(
+    offer_category_id: str, level: int, category_tree: dict[str, Category]
+) -> str:
     offer_category = category_tree.get(str(offer_category_id))
     path = offer_category.path.split("/")
 
@@ -131,7 +133,7 @@ def get_offer_n_level_category(offer_category_id: str, level: int, category_tree
         path.pop(0)
         return "/".join(path)
 
-    return path[level-1]
+    return path[level - 1]
 
 
 # {'name', 'oldprice', 'description', 'param', 'group_id', 'url', 'categoryId', 'vendor', 'currencyId', 'modified_time', 'picture', 'price', 'barcode'}
@@ -146,7 +148,7 @@ mapping_table = {
     "inserted_at": datetime.datetime.now(),
     "updated_at": datetime.datetime.now(),
     "currencyId": "currency",
-    "barcode": "barcode"
+    "barcode": "barcode",
 }
 
 
@@ -160,10 +162,18 @@ def process_offer(offer_tag: etree.Element, category_tree: dict[str, Category]):
             params[elem.attrib["name"]] = elem.text
 
         if elem.tag == "categoryId" and elem.text:
-            offer["category_lvl_1"] = get_offer_n_level_category(elem.text, 1, category_tree)
-            offer["category_lvl_2"] = get_offer_n_level_category(elem.text, 2, category_tree)
-            offer["category_lvl_3"] = get_offer_n_level_category(elem.text, 3, category_tree)
-            offer["category_remaining"] = get_offer_n_level_category(elem.text, -1, category_tree)
+            offer["category_lvl_1"] = get_offer_n_level_category(
+                elem.text, 1, category_tree
+            )
+            offer["category_lvl_2"] = get_offer_n_level_category(
+                elem.text, 2, category_tree
+            )
+            offer["category_lvl_3"] = get_offer_n_level_category(
+                elem.text, 3, category_tree
+            )
+            offer["category_remaining"] = get_offer_n_level_category(
+                elem.text, -1, category_tree
+            )
     offer["features"] = json.dumps(params, ensure_ascii=False)
     insert_offer(Offer(**offer))
 
@@ -177,7 +187,11 @@ def main():
     total_size = os.path.getsize(xml_path)
     with open(xml_path, "rb") as f:
         context = etree.iterparse(f, events=["start"], tag="offer")
-        with tqdm(total=total_size, unit_scale=True, bar_format="Processing offers: {l_bar}{bar}{r_bar}") as pbar:
+        with tqdm(
+            total=total_size,
+            unit_scale=True,
+            bar_format="Processing offers: {l_bar}{bar}{r_bar}",
+        ) as pbar:
             for _, offer_tag in context:
                 process_offer(offer_tag, category_tree)
                 pbar.update(f.tell() - pbar.n)
