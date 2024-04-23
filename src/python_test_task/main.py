@@ -57,14 +57,20 @@ class Offer:
 def get_raw_categories(xml_file_path: str) -> dict[str, dict]:
     categories = dict()
     try:
-        for action, elem in etree.iterparse(xml_file_path, tag="category"):
-            categories[elem.attrib.get("id")] = {
-                "parent_id": elem.attrib.get("parentId", ""),
-                "name": elem.text,
-                "path": (elem.text,),
-            }
-    except etree.XMLSyntaxError:
-        pass
+        for action, elem in etree.iterparse(
+            xml_file_path, events=("start", "end"), tag=("category", "categories")
+        ):
+            if action == "end" and elem.tag == "categories":
+                break
+
+            if action == "end" and elem.tag == "category":
+                categories[elem.attrib.get("id")] = {
+                    "parent_id": elem.attrib.get("parentId", ""),
+                    "name": elem.text,
+                    "path": (elem.text,),
+                }
+    except etree.XMLSyntaxError as e:
+        print(e)
     return categories
 
 
