@@ -1,0 +1,200 @@
+<yml_catalog date="21 Apr 2024 11:45:36">
+<categories>
+   <category id="90401">Все товары</category>
+   <category id="198119" parentId="90401">Электроника</category>
+   <category id="4976480" parentId="198119">Оптические приборы</category>
+   <category id="10599873" parentId="198119">Аудио- и видеотехника</category>
+   <category id="1558993" parentId="198119">Игровые приставки</category>
+   <category id="944108" parentId="198119">Портативная техника</category>
+   <category id="90607" parentId="198119">Фото и видеокамеры</category>
+   <category id="91461" parentId="198119">Телефоны</category>
+   <category id="995785" parentId="198119">GPS-навигация</category>
+   <category id="4976530" parentId="4976480">Лупы</category>
+   <category id="277646" parentId="4976480">Телескопы</category>
+   <category id="6395084" parentId="4976480">Аксессуары</category>
+   <category id="638257" parentId="4976480">Микроскопы</category>
+   <category id="638258" parentId="4976480">Приборы ночного видения</category>
+   <category id="226665" parentId="4976480">Бинокли и зрительные трубы</category>
+   <category id="4165204" parentId="10599873">ТВ-приставки и медиаплееры</category>
+   <category id="766167" parentId="10599873">Системы MultiRoom</category>
+   <category id="90543" parentId="10599873">Аудиотехника</category>
+   <category id="90625" parentId="10599873">Аксессуары</category>
+   <category id="90633" parentId="10599873">DVD и Blu-ray плееры</category>
+   <category id="90637" parentId="10599873">Спутниковое телевидение</category>
+   <category id="90639" parentId="10599873">Телевизоры</category>
+   <category id="91105" parentId="10599873">TV-тюнеры</category>
+   <category id="14960839" parentId="1558993">Игры для приставок и ПК</category>
+   <category id="186461" parentId="1558993">Аксессуары</category>
+   <category id="91122" parentId="1558993">Игровые приставки</category>
+   <category id="7798524" parentId="1558993">Ретроконсоли</category>
+   <category id="1039394" parentId="1558993">Игры для классических приставок</category>
+   <category id="6126496" parentId="944108">Аксессуары для цифровых плееров</category>
+   <category id="6126526" parentId="944108">Аксессуары для электронных книг</category>
+   <category id="17936763" parentId="944108">Прочие аксессуары</category>
+   <category id="16265387" parentId="944108">Аксессуары для наушников и гарнитур</category>
+   <category id="15613766" parentId="944108">Запчасти для электронных книг</category>
+   <category id="16112364" parentId="944108">Аксессуары для очков виртуальной реальности</category>
+   <category id="766160" parentId="944108">Системы Умный дом</category>
+   <category id="15553892" parentId="944108">Умные колонки</category>
+   <category id="16796530" parentId="944108">Аксессуары для ручных стабилизаторов и стедикамов</category>
+   <category id="90545" parentId="944108">Магнитолы</category>
+   <category id="90546" parentId="944108">Радиоприемники</category>
+   <category id="90555" parentId="944108">Наушники и гарнитуры</category>
+   <category id="90559" parentId="944108">Диктофоны</category>
+   <category id="90560" parentId="944108">Цифровые плееры</category>
+   <category id="91151" parentId="944108">Словари и переводчики</category>
+   <category id="10972670" parentId="944108">Очки виртуальной реальности</category>
+   <category id="31941450" parentId="944108">Роботы</category>
+   <category id="2724669" parentId="944108">Портативная акустика</category>
+   <category id="2417247" parentId="944108">Электронные книги</category>
+   <category id="179660" parentId="90607">Пленочные фотоаппараты</category>
+   <category id="12323869" parentId="90607">Специальное оборудование</category>
+   <category id="1596792" parentId="90607">Цифровые фоторамки и фотоальбомы</category>
+   <category id="90611" parentId="90607">Аксессуары</category>
+   <category id="90613" parentId="90607">Объективы</category>
+   <category id="90617" parentId="90607">Фотовспышки</category>
+   <category id="90635" parentId="90607">Видеокамеры и экшн-камеры</category>
+   <category id="10590810" parentId="90607">Фотоаппараты моментальной печати</category>
+   <category id="91148" parentId="90607">Фотоаппараты</category>
+   <category id="5081621" parentId="91461">Спутниковые телефоны</category>
+   <category id="13939151" parentId="91461">Ремешки для умных часов</category>
+   <category id="16265381" parentId="91461">Аксессуары для умных часов и браслетов</category>
+   <category id="10498025" parentId="91461">Умные часы и браслеты</category>
+   <category id="13371306" parentId="91461">Тарифные планы и номера</category>
+   <category id="91463" parentId="91461">Проводные телефоны</category>
+   <category id="91464" parentId="91461">Радиотелефоны</category>
+   <category id="91470" parentId="91461">Рации и радиостанции</category>
+   <category id="91491" parentId="91461">Мобильные телефоны</category>
+   <category id="91497" parentId="91461">Аксессуары для телефонов</category>
+   <category id="17923973" parentId="91461">Аксессуары для радиостанций</category>
+   <category id="8367360" parentId="995785">GPS-трекеры</category>
+   <category id="995786" parentId="995785">Аксессуары</category>
+   <category id="995787" parentId="995785">Карты и программы GPS-навигации</category>
+   <category id="294661" parentId="995785">GPS-навигаторы</category>
+   <category id="18539830" parentId="90543">Мегафоны и усилители голоса</category>
+   <category id="278420" parentId="90543">Системы караоке</category>
+   <category id="6374322" parentId="90543">Цифро-аналоговые преобразователи</category>
+   <category id="90544" parentId="90543">Музыкальные центры</category>
+   <category id="90548" parentId="90543">Акустические системы</category>
+   <category id="90549" parentId="90543">CD-проигрыватели</category>
+   <category id="90550" parentId="90543">Радиотюнеры</category>
+   <category id="90551" parentId="90543">Микрофоны и радиосистемы</category>
+   <category id="90554" parentId="90543">Усилители и ресиверы</category>
+   <category id="90561" parentId="90543">Проигрыватели виниловых дисков</category>
+   <category id="14955823" parentId="90625">Аксессуары для микрофонов</category>
+   <category id="90626" parentId="90625">Батарейки и аккумуляторы</category>
+   <category id="90627" parentId="90625">Пульты ДУ</category>
+   <category id="90629" parentId="90625">Кронштейны и стойки</category>
+   <category id="10510546" parentId="90625">Антенны и запчасти для телевизоров</category>
+   <category id="7152189" parentId="90625">Прочие аксессуары для аудио- и видеотехники</category>
+   <category id="6334304" parentId="90625">3D-очки</category>
+   <category id="14946301" parentId="90625">Зарядные устройства для стандартных аккумуляторов</category>
+   <category id="2134462" parentId="766160">Комплекты умного дома</category>
+   <category id="16897567" parentId="766160">Реле для умного дома</category>
+   <category id="2501051" parentId="766160">Шлюзы умного дома</category>
+   <category id="90610" parentId="12323869">Оборудование для профессионалов</category>
+   <category id="90614" parentId="12323869">Измерительное оборудование</category>
+   <category id="15488750" parentId="90611">Аксессуары для фото и видеокамер</category>
+   <category id="1009492" parentId="90611">Аксессуары для фотовспышек</category>
+   <category id="984940" parentId="90611">Адаптеры и переходные кольца</category>
+   <category id="984941" parentId="90611">Дистанционное управление</category>
+   <category id="278370" parentId="90611">Аксессуары для экшн-камер</category>
+   <category id="8442711" parentId="90611">Аксессуары для штативов и моноподов</category>
+   <category id="994004" parentId="90611">Светофильтры</category>
+   <category id="7766764" parentId="90611">Конвертеры</category>
+   <category id="90616" parentId="90611">Сумки, чехлы для фото- и видеотехники</category>
+   <category id="90618" parentId="90611">Фотоматериалы и химикаты</category>
+   <category id="91153" parentId="90611">Насадки и крышки на объективы</category>
+   <category id="91156" parentId="90611">Аккумуляторы и зарядные устройства</category>
+   <category id="14424089" parentId="90611">Чистящие принадлежности для оптики</category>
+   <category id="14369750" parentId="90635">Экшн-камеры</category>
+   <category id="15450276" parentId="90635">Видеокамеры</category>
+   <category id="8353924" parentId="91497">Портативные аккумуляторы</category>
+   <category id="5081622" parentId="91497">Подвески</category>
+   <category id="15876896" parentId="91497">Штативы, держатели и стедикамы</category>
+   <category id="10834023" parentId="91497">Чехлы-аккумуляторы</category>
+   <category id="6516122" parentId="91497">Стилусы</category>
+   <category id="12429672" parentId="91497">Объективы</category>
+   <category id="91072" parentId="91497">Защитные пленки и стекла</category>
+   <category id="10382050" parentId="91497">Док-станции</category>
+   <category id="91498" parentId="91497">Чехлы</category>
+   <category id="91499" parentId="91497">Запчасти для мобильных телефонов</category>
+   <category id="91500" parentId="91497">Антенны и усилители сигнала</category>
+   <category id="91503" parentId="91497">Зарядные устройства и адаптеры</category>
+   <category id="17677661" parentId="90610">Осветительное оборудование</category>
+   <category id="17677674" parentId="90610">Стойки и крепежи</category>
+   <category id="17677695" parentId="90610">Отражатели и рассеиватели</category>
+   <category id="17677706" parentId="90610">Фоны</category>
+   <category id="17677719" parentId="90610">Прочее фотооборудование</category>
+</categories>
+<offer id="6331293" available="true">
+    <barcode>4905524654387</barcode>
+    <categoryId>90613</categoryId>
+    <currencyId>RUB</currencyId>
+    <description>Телеобъектив с мощным 11-кратным зумомСтильные детали из высококачественного алюминиевого сплава на корпусеШирокий диапазон зума идеально подходит для путешествий и самых разнообразных видов съемкиФункция оптической стабилизации изображения Optical SteadyShot встроена в объектив и обеспечивает более резкое и четкое изображение при съемке с рук на любых значениях зума. Бесшумный механизм видеосъемкиВысокоэффективная оптика с 4 асферическими поверхностями обеспечивает превосходную контрастность и резкостьПлавная, мягкая и высокоскоростная автофокусировка и регулировка значения диафрагмы: идеально подходит для фотографирования и HD-видеосъемки 7-лепестковая циркулярная диафрагма обеспечивает красивое размытие заднего планаПрямая ручная фокусировка с помощью невращающегося фокусировочного кольца во время автофокусировки: идеально подходит для точной, удобной ручной подстройки фокусировки</description>
+    <group_id>1779353328</group_id>
+    <modified_time>1713697288</modified_time>
+    <name>Объектив Sony 18-200mm f/3.5-6.3 E (SEL-18200), серебристый</name>
+    <param name="Цвет">серебристый</param>
+    <picture>https://avatars.mds.yandex.net/get-mpic/1620389/img_id8752064430358011971/9</picture>
+    <price>55450</price>
+    <url>https://wextap.com/g/my89i8zkr22ba12a538eb62ed2b196/?erid=25H8d7vbP8SRTvJ4Q27doN&amp;f_id=21908&amp;ulp=https%3A%2F%2Fmarket.yandex.ru%2Fproduct--obektiv-sony-18-200mm-f-3-5-6-3-e-sel-18200-serebristyi%2F1779353328%3Fdistr_type%3D7%26mclid%3D1002%26pp%3D940%26sku%3D6331293</url>
+    <vendor>Sony</vendor>
+</offer>
+<offer id="6331293" available="true">
+    <barcode>4905524654387</barcode>
+    <categoryId>90613</categoryId>
+    <currencyId>RUB</currencyId>
+    <description>Телеобъектив с мощным 11-кратным зумомСтильные детали из высококачественного алюминиевого сплава на корпусеШирокий диапазон зума идеально подходит для путешествий и самых разнообразных видов съемкиФункция оптической стабилизации изображения Optical SteadyShot встроена в объектив и обеспечивает более резкое и четкое изображение при съемке с рук на любых значениях зума. Бесшумный механизм видеосъемкиВысокоэффективная оптика с 4 асферическими поверхностями обеспечивает превосходную контрастность и резкостьПлавная, мягкая и высокоскоростная автофокусировка и регулировка значения диафрагмы: идеально подходит для фотографирования и HD-видеосъемки 7-лепестковая циркулярная диафрагма обеспечивает красивое размытие заднего планаПрямая ручная фокусировка с помощью невращающегося фокусировочного кольца во время автофокусировки: идеально подходит для точной, удобной ручной подстройки фокусировки</description>
+    <group_id>1779353328</group_id>
+    <modified_time>1713697288</modified_time>
+    <name>Объектив Sony 18-200mm f/3.5-6.3 E (SEL-18200), серебристый</name>
+    <param name="Цвет">серебристый</param>
+    <picture>https://avatars.mds.yandex.net/get-mpic/1620389/img_id8752064430358011971/9</picture>
+    <price>55450</price>
+    <url>https://wextap.com/g/my89i8zkr22ba12a538eb62ed2b196/?erid=25H8d7vbP8SRTvJ4Q27doN&amp;f_id=21908&amp;ulp=https%3A%2F%2Fmarket.yandex.ru%2Fproduct--obektiv-sony-18-200mm-f-3-5-6-3-e-sel-18200-serebristyi%2F1779353328%3Fdistr_type%3D7%26mclid%3D1002%26pp%3D940%26sku%3D6331293</url>
+    <vendor>Sony</vendor>
+</offer>
+<offer id="6331293" available="true">
+    <barcode>4905524654387</barcode>
+    <categoryId>90613</categoryId>
+    <currencyId>RUB</currencyId>
+    <description>Телеобъектив с мощным 11-кратным зумомСтильные детали из высококачественного алюминиевого сплава на корпусеШирокий диапазон зума идеально подходит для путешествий и самых разнообразных видов съемкиФункция оптической стабилизации изображения Optical SteadyShot встроена в объектив и обеспечивает более резкое и четкое изображение при съемке с рук на любых значениях зума. Бесшумный механизм видеосъемкиВысокоэффективная оптика с 4 асферическими поверхностями обеспечивает превосходную контрастность и резкостьПлавная, мягкая и высокоскоростная автофокусировка и регулировка значения диафрагмы: идеально подходит для фотографирования и HD-видеосъемки 7-лепестковая циркулярная диафрагма обеспечивает красивое размытие заднего планаПрямая ручная фокусировка с помощью невращающегося фокусировочного кольца во время автофокусировки: идеально подходит для точной, удобной ручной подстройки фокусировки</description>
+    <group_id>1779353328</group_id>
+    <modified_time>1713697288</modified_time>
+    <name>Объектив Sony 18-200mm f/3.5-6.3 E (SEL-18200), серебристый</name>
+    <param name="Цвет">серебристый</param>
+    <picture>https://avatars.mds.yandex.net/get-mpic/1620389/img_id8752064430358011971/9</picture>
+    <price>55450</price>
+    <url>https://wextap.com/g/my89i8zkr22ba12a538eb62ed2b196/?erid=25H8d7vbP8SRTvJ4Q27doN&amp;f_id=21908&amp;ulp=https%3A%2F%2Fmarket.yandex.ru%2Fproduct--obektiv-sony-18-200mm-f-3-5-6-3-e-sel-18200-serebristyi%2F1779353328%3Fdistr_type%3D7%26mclid%3D1002%26pp%3D940%26sku%3D6331293</url>
+    <vendor>Sony</vendor>
+</offer>
+<offer id="6331293" available="true">
+    <barcode>4905524654387</barcode>
+    <categoryId>90613</categoryId>
+    <currencyId>RUB</currencyId>
+    <description>Телеобъектив с мощным 11-кратным зумомСтильные детали из высококачественного алюминиевого сплава на корпусеШирокий диапазон зума идеально подходит для путешествий и самых разнообразных видов съемкиФункция оптической стабилизации изображения Optical SteadyShot встроена в объектив и обеспечивает более резкое и четкое изображение при съемке с рук на любых значениях зума. Бесшумный механизм видеосъемкиВысокоэффективная оптика с 4 асферическими поверхностями обеспечивает превосходную контрастность и резкостьПлавная, мягкая и высокоскоростная автофокусировка и регулировка значения диафрагмы: идеально подходит для фотографирования и HD-видеосъемки 7-лепестковая циркулярная диафрагма обеспечивает красивое размытие заднего планаПрямая ручная фокусировка с помощью невращающегося фокусировочного кольца во время автофокусировки: идеально подходит для точной, удобной ручной подстройки фокусировки</description>
+    <group_id>1779353328</group_id>
+    <modified_time>1713697288</modified_time>
+    <name>Объектив Sony 18-200mm f/3.5-6.3 E (SEL-18200), серебристый</name>
+    <param name="Цвет">серебристый</param>
+    <picture>https://avatars.mds.yandex.net/get-mpic/1620389/img_id8752064430358011971/9</picture>
+    <price>55450</price>
+    <url>https://wextap.com/g/my89i8zkr22ba12a538eb62ed2b196/?erid=25H8d7vbP8SRTvJ4Q27doN&amp;f_id=21908&amp;ulp=https%3A%2F%2Fmarket.yandex.ru%2Fproduct--obektiv-sony-18-200mm-f-3-5-6-3-e-sel-18200-serebristyi%2F1779353328%3Fdistr_type%3D7%26mclid%3D1002%26pp%3D940%26sku%3D6331293</url>
+    <vendor>Sony</vendor>
+</offer>
+<offer id="6331293" available="true">
+    <barcode>4905524654387</barcode>
+    <categoryId>90613</categoryId>
+    <currencyId>RUB</currencyId>
+    <description>Телеобъектив с мощным 11-кратным зумомСтильные детали из высококачественного алюминиевого сплава на корпусеШирокий диапазон зума идеально подходит для путешествий и самых разнообразных видов съемкиФункция оптической стабилизации изображения Optical SteadyShot встроена в объектив и обеспечивает более резкое и четкое изображение при съемке с рук на любых значениях зума. Бесшумный механизм видеосъемкиВысокоэффективная оптика с 4 асферическими поверхностями обеспечивает превосходную контрастность и резкостьПлавная, мягкая и высокоскоростная автофокусировка и регулировка значения диафрагмы: идеально подходит для фотографирования и HD-видеосъемки 7-лепестковая циркулярная диафрагма обеспечивает красивое размытие заднего планаПрямая ручная фокусировка с помощью невращающегося фокусировочного кольца во время автофокусировки: идеально подходит для точной, удобной ручной подстройки фокусировки</description>
+    <group_id>1779353328</group_id>
+    <modified_time>1713697288</modified_time>
+    <name>Объектив Sony 18-200mm f/3.5-6.3 E (SEL-18200), серебристый</name>
+    <param name="Цвет">серебристый</param>
+    <picture>https://avatars.mds.yandex.net/get-mpic/1620389/img_id8752064430358011971/9</picture>
+    <price>55450</price>
+    <url>https://wextap.com/g/my89i8zkr22ba12a538eb62ed2b196/?erid=25H8d7vbP8SRTvJ4Q27doN&amp;f_id=21908&amp;ulp=https%3A%2F%2Fmarket.yandex.ru%2Fproduct--obektiv-sony-18-200mm-f-3-5-6-3-e-sel-18200-serebristyi%2F1779353328%3Fdistr_type%3D7%26mclid%3D1002%26pp%3D940%26sku%3D6331293</url>
+    <vendor>Sony</vendor>
+</offer>
+</yml_catalog>
